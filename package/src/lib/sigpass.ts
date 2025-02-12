@@ -149,8 +149,8 @@ async function getSigpassWallet() {
   /**
    * Retrieve the handle to the private key from some unauthenticated storage
    */
-  const cache = await caches.open("gmgn-storage");
-  const request = new Request("gmgn-wallet");
+  const cache = await caches.open("smart-wallet-storage");
+  const request = new Request("smart-wallet");
   const response = await cache.match(request);
   const handle = response
     ? new Uint8Array(await response.arrayBuffer())
